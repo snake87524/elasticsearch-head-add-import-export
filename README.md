@@ -22,20 +22,21 @@
 
 <div align=center>
 <img src="https://user-images.githubusercontent.com/126055543/234267541-3da55bb9-32a3-4588-8274-70a6296760e0.png"></div>
-<br><p align="center">img-feature-1</p><br>
+<p align="center">img-feature-1</p><br>
 
 <div align=center>
 <img src="https://user-images.githubusercontent.com/126055543/234268437-38fe8bd5-cf2d-4142-8548-9f4a7cc14428.png"></div>
-<br><p align="center">img-feature-2</p><br>
+<p align="center">img-feature-2</p><br>
 
 <div align=center>
 <img src="https://user-images.githubusercontent.com/126055543/234273150-6d53bfdc-f373-4d5e-a8b5-6b28ef103945.png"></div>
-<br><p align="center">img-feature-3</p><br>
+<p align="center">img-feature-3</p><br>
 
 <div align=center>
 <img src="https://user-images.githubusercontent.com/126055543/234280835-d7a64cb2-6750-44c6-a340-7a7cec0954c0.png"></div>
-<br><p align="center">img-install-1</p><br>
+<p align="center">img-install-1</p><br>
 
 <div align=center>
-<img src="https://user-images.githubusercontent.com/126055543/234273150-6d53bfdc-f373-4d5e-a8b5-6b28ef103945.png"></div>
-<br><p align="center">img-install-2</p><br>
+<img src="https://user-images.githubusercontent.com/126055543/234282589-f255d4f9-c37c-4713-869e-8d55b7cece06.png"></div>
+<p align="center">img-install-2</p><br>
+
