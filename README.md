@@ -3,7 +3,7 @@
 ### add Features
 1.import csv; (img-feature-1)<br> 
 2.export csv; (img-feature-2)<br> 
-3.export all mappings; (img-feature-3)<br><br>
+3.export all mappings; (img-feature-3)<br>
 
 ### install
 1.open browse Extension page,turn on browse developer mode; (img-install-1)<br>
@@ -13,7 +13,7 @@
 ### 添加功能
 1.索引数据导出csv; (img-feature-1)<br>
 2.csv数据更新\插入索引; (img-feature-2)<br>
-3.导出所有索引结构; (img-feature-3)<br><br>
+3.导出所有索引结构; (img-feature-3)<br>
 
 ### 安装使用
 1.打开浏览器管理扩展页面,打开开发人员模式; (img-install-1)<br>
