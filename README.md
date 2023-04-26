@@ -1,8 +1,8 @@
 # elasticsearch-head-add-import-export
 ## elasticsearch-head <br>
 ### add Features
-1.import csv; (img-feature-1)<br> 
-2.export csv; (img-feature-2)<br> 
+1.using csv data to insert or update index; (img-feature-1)<br> 
+2.export index data to csv; (img-feature-2)<br> 
 3.export all mappings; (img-feature-3)<br>
 
 ### install
@@ -11,8 +11,8 @@
 
 ## elasticsearch-head 
 ### 添加功能
-1.索引数据导出csv; (img-feature-1)<br>
-2.csv数据更新\插入索引; (img-feature-2)<br>
+1.csv数据更新\插入索引; (img-feature-1)<br>
+2.索引数据导出csv; (img-feature-2)<br>
 3.导出所有索引结构; (img-feature-3)<br>
 
 ### 安装使用
