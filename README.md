@@ -1,23 +1,23 @@
 # elasticsearch-head-add-import-export
 ## elasticsearch-head <br>
 ### add Features
-1.using csv data to insert or update index; (img-feature-1)<br> 
-2.export index data to csv; (img-feature-2)<br> 
-3.export all mappings; (img-feature-3)<br>
+#### 1.using csv data to insert or update index; (img-feature-1)<br> 
+#### 2.export index data to csv; (img-feature-2)<br> 
+#### 3.export all mappings; (img-feature-3)<br>
 
 ### install
-1.open browse Extension page,turn on browse developer mode; (img-install-1)<br>
-2.click load decompressed extensions,choose the folder; (img-install-2)<br><br>
+#### 1.open browse Extension page,turn on browse developer mode; (img-install-1)<br>
+#### 2.click load decompressed extensions,choose the folder; (img-install-2)<br><br>
 
 ## elasticsearch-head 
 ### 添加功能
-1.csv数据更新\插入索引; (img-feature-1)<br>
-2.索引数据导出csv; (img-feature-2)<br>
-3.导出所有索引结构; (img-feature-3)<br>
+#### 1.csv数据更新\插入索引; (img-feature-1)<br>
+#### 2.索引数据导出csv; (img-feature-2)<br>
+#### 3.导出所有索引结构; (img-feature-3)<br>
 
 ### 安装使用
-1.打开浏览器管理扩展页面,打开开发人员模式; (img-install-1)<br>
-2.点击加载解压缩的扩展,选择文件目录; (img-install-2)<br><br><br>
+#### 1.打开浏览器管理扩展页面,打开开发人员模式; (img-install-1)<br>
+#### 2.点击加载解压缩的扩展,选择文件目录; (img-install-2)<br><br><br>
 
 
 <div align=center>
