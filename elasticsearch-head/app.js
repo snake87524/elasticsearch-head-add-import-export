@@ -3205,17 +3205,16 @@
 					//setTimeout(500);
 					if(r.hits.hits.length > 0){
 						expResult.push(r.hits.hits);
-						command.from += 1000; 
+						command.from += command.size; 
 						_exportMul_handler(index, command);
 					}
 					else{
-						console.log(expResult);
 						let csvString = new Array();
 						title = [];
-						// for(const k in expResult[0][0]._source){
-						// 	title.push(k);
-						// }
-						let metaData = new app.data.MetaData({state: data});
+						for(const k in expResult[0][0]._source){
+							title.push(k);
+						}
+						//let metaData = new app.data.MetaData({state: data});
 						csvString.push(title);	
 						for(const i in expResult){
 							for(const item in expResult[i]){
@@ -3244,7 +3243,7 @@
 										}
 									}
 								}
-								csvString.push(datas);
+								datas.length == 0 ? console.log(item) : csvString.push(datas); 
 							}
 						}
 						let csvResult = csvString.map(e => e.join(",")).join('\n');
