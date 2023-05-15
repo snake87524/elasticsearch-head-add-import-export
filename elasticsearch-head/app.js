@@ -3136,7 +3136,7 @@
 				const [fileHandle] = await window?.showOpenFilePicker({
 				  types: [
 					{
-					  description: "文本类型",
+					  description: "filetype",
 					  accept: {"text/plain": ['.csv']}
 					}
 				  ]
@@ -3150,8 +3150,7 @@
 					lines[0].split(",").map(function(k){
 						metas.push(k);
 					})
-
-					let primaryKey = prompt( "请输入主键字段：");
+					let primaryKey = prompt(i18n.text("IndexActionsMenu.Tips"));
 					if (primaryKey in metas){
 						let requestData = new Array();
 						for(let ii = 1;ii < lines.length; ii++){
@@ -3180,7 +3179,7 @@
 								}
 								else{
 									new ui.JsonPanel({
-										title: "更新/插入",
+										title: "insert/update",
 										json: upsertResult
 									});
 								}
@@ -3195,7 +3194,74 @@
 		},
 
 		_export_handler: function(index) {
-			
+			let cluster = this.config.cluster;
+			let expResult = [];
+			let command = {
+				"size": 1000,
+				"from": 0
+			  };
+			function _exportMul_handler(index, command) {
+				cluster.post(encodeURIComponent( index.name ) + "/_search", JSON.stringify(command), function(r) {
+					//setTimeout(500);
+					if(r.hits.hits.length > 0){
+						expResult.push(r.hits.hits);
+						command.from += 1000; 
+						_exportMul_handler(index, command);
+					}
+					else{
+						console.log(expResult);
+						let csvString = new Array();
+						title = [];
+						// for(const k in expResult[0][0]._source){
+						// 	title.push(k);
+						// }
+						let metaData = new app.data.MetaData({state: data});
+						csvString.push(title);	
+						for(const i in expResult){
+							for(const item in expResult[i]){
+								let datas = [];
+								for(const data in expResult[i][item]._source){
+									let dataType = typeof expResult[i][item]._source[data];
+									if(dataType == "object"){
+										datas.push("\""+JSON.stringify(expResult[i][item]._source[data]).replace(new RegExp("\"","gm"),"\"\"")+"\"")
+									}
+									else{
+										if(dataType == "string"){
+											try {
+												var obj = JSON.parse(expResult[i][item]._source[data]);
+												if(typeof obj == 'object' && obj ){
+													datas.push("\""+JSON.stringify(expResult[i][item]._source[data]).replace(new RegExp("\"","gm"),"\"\"")+"\"")
+												}
+												else{
+													datas.push(JSON.stringify(expResult[i][item]._source[data]));
+												}
+											} catch(e) {
+												datas.push(JSON.stringify(expResult[i][item]._source[data]));
+											}
+										}
+										else{
+											datas.push(JSON.stringify(expResult[i][item]._source[data]));
+										}
+									}
+								}
+								csvString.push(datas);
+							}
+						}
+						let csvResult = csvString.map(e => e.join(",")).join('\n');
+						let link = document.createElement("a")
+						let exportContent = '\uFEFF'
+						let blob = new Blob([exportContent+csvResult],{
+							type:'text/plain;charset=utrf-8'
+						})
+						link.id = "download-csv"
+						link.setAttribute("href", URL.createObjectURL(blob))
+						link.setAttribute('download', index.name + ".csv")
+						document.body.appendChild(link)
+						link.click()
+					}
+				});
+			}
+			_exportMul_handler(index, command);
 		},
 		
 		_deleteIndexAction_handler: function(index) {
@@ -4245,7 +4311,7 @@
 							})
 							link.id = "download-csv"
 							link.setAttribute("href", URL.createObjectURL(blob))
-							link.setAttribute('download', "description.csv")
+							link.setAttribute('download', "mappings.csv")
 							document.body.appendChild(link)
 							link.click()
 						}
